@@ -1,10 +1,11 @@
-# Busted! [![Build Status](https://travis-ci.org/Pross/reBusted.svg?branch=master)](https://travis-ci.org/Pross/reBusted)
+# reBusted! [![Build Status](https://travis-ci.org/Pross/reBusted.svg?branch=master)](https://travis-ci.org/Pross/reBusted)
 
 Force browsers to load the most recent file if modified.
 
 ## Description
 
 Saves you from asking "have you emptied your cache?".
+Forked from the original Busted! plugin.
 
 **Features**
 
