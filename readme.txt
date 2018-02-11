@@ -14,6 +14,8 @@ Force browsers to load the most recent file if modified.
 
 Saves you from asking "have you emptied your cache?".
 
+Forked and updated for todays WordPress and PHP from the original plugin by Paul Clark.
+
 **Features**
 
 * Safe to leave running on live sites.
