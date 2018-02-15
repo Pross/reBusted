@@ -1,4 +1,4 @@
-=== Busted! ===
+=== reBusted! ===
 Contributors: pross
 Plugin URI: https://github.com/Pross/reBusted
 Tags: browser cache, develop, debug, client, clear, empty, refresh
