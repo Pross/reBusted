@@ -16,8 +16,6 @@ class Re_Busted {
 	 */
 	static protected $version_slug = 'b-modified';
 
-	static protected $priority = PHP_INT_MAX - 1;
-
 	/**
 	 * Setup hooks and vars.
 	 *
@@ -44,10 +42,10 @@ class Re_Busted {
 		 *
 		 * Extremely high priority assures we catch everything.
 		 */
-		add_action( 'wp_enqueue_scripts',    array( 'Re_Busted', 'wp_print_scripts' ), self::get_priority() );
-		add_action( 'admin_enqueue_scripts', array( 'Re_Busted', 'wp_print_scripts' ), self::get_priority() );
-		add_filter( 'stylesheet_uri',        array( 'Re_Busted', 'stylesheet_uri' ),   self::get_priority() );
-		add_filter( 'locale_stylesheet_uri', array( 'Re_Busted', 'stylesheet_uri' ),   self::get_priority() );
+		add_action( 'wp_enqueue_scripts',    array( 'Re_Busted', 'wp_print_scripts' ), PHP_INT_MAX - 1 );
+		add_action( 'admin_enqueue_scripts', array( 'Re_Busted', 'wp_print_scripts' ), PHP_INT_MAX - 1 );
+		add_filter( 'stylesheet_uri',        array( 'Re_Busted', 'stylesheet_uri' ),   PHP_INT_MAX - 1 );
+		add_filter( 'locale_stylesheet_uri', array( 'Re_Busted', 'stylesheet_uri' ),   PHP_INT_MAX - 1 );
 	}
 
 	/**
