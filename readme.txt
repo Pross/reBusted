@@ -4,7 +4,7 @@ Plugin URI: https://github.com/Pross/reBusted
 Tags: browser cache, develop, debug, client, clear, empty, refresh
 Requires at least: 3.4
 Tested up to: 4.9.4
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,6 +40,9 @@ Requires scripts use any of the below functions to load. Almost all files meet t
 1. Activate the plugin.
 
 == Changelog ==
+
+= 1.1 =
+* Fixed fatal error on ancient PHP versions.
 
 = 1.0 =
 * Forked from original Busted! plugin and updated for todays WordPress/PHP.
