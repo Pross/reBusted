@@ -12,10 +12,6 @@ class BustedVars extends WP_UnitTestCase {
 		Re_Busted::init();
 	}
 
-	public function test_priority() {
-		$this->assertEquals( PHP_INT_MAX - 1, Re_Busted::get_priority() );
-	}
-
 	public function test_version_slug() {
 		$this->assertEquals( 'b-modified', Re_Busted::get_version_slug() );
 	}
