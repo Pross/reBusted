@@ -2,9 +2,6 @@
 
 Force browsers to load the most recent file if modified.
 
-## Install
-Install the plugin from https://wordpress.org/plugins/rebusted/ or directly via plugins install in WP
-
 ## Description
 
 Saves you from asking "have you emptied your cache?".

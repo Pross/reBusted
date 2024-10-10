@@ -3,7 +3,7 @@
 Plugin Name: reBusted!
 Plugin URI: https://github.com/Pross/reBusted
 Description: Force browsers to load the most recent file if modified. Requires <a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_style">wp_enqueue_style</a>, <a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script">wp_enqueue_script</a>, or <a href="http://codex.wordpress.org/Function_Reference/get_stylesheet_uri">get_stylesheet_uri</a> be used to load scripts and styles.
-Version: 1.1
+Version: 1.2
 Author: Simon Prosser
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -55,14 +55,15 @@ class Re_Busted {
 	 */
 	static public function wp_print_scripts() {
 
-		global $wp_scripts, $wp_styles;
+		global $wp_scripts, $wp_styles, $wp_version;
 
 		foreach ( array( $wp_scripts, $wp_styles ) as $enqueue_list ) {
 			if ( ! isset( $enqueue_list->__busted_filtered ) && is_object( $enqueue_list ) ) {
-				foreach ( (array) @ $enqueue_list->registered as $handle => $script ) {
+				foreach ( (array) $enqueue_list->registered as $handle => $script ) {
 					$modification_time = self::modification_time( $script->src );
 					if ( $modification_time ) {
-						$version = $script->ver . '-' . self::get_version_slug() . '-' . $modification_time;
+						$version = is_string( $script->ver ) ? $script->ver : $wp_version;
+						$version = $version . '-' . self::get_version_slug() . '-' . $modification_time;
 						$enqueue_list->registered[ $handle ]->ver = $version;
 					}
 				}
